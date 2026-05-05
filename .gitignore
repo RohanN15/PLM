@@ -1,0 +1,44 @@
+# Virtual environment (root-level venv)
+bin/
+include/
+lib/
+lib64/
+share/
+pyvenv.cfg
+
+# Common venv directory names
+venv/
+.venv/
+env/
+.env/
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+
+# Downloaded structure files
+pdb_files/
+
+# Third-party source / downloaded libraries
+source_docs/
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
