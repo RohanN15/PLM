@@ -22,6 +22,8 @@ dist/
 build/
 *.egg
 .eggs/
+.cache/
+.matplotlib_cache/
 
 # Jupyter
 .ipynb_checkpoints/
@@ -30,6 +32,8 @@ build/
 
 # Downloaded structure files
 pdb_files/
+embeddings/
+checkpoints/
 
 # Third-party source / downloaded libraries
 source_docs/
