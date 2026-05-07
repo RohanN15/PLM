@@ -11,7 +11,7 @@ Per-residue secondary structure prediction (Q3: H/E/C) using frozen ESM2 embeddi
 
 ## Pipeline
 
-### Step 1 — Build the Dataset (Person 1)
+### Step 1 — Build the Dataset
 
 Downloads PDB structures from RCSB, runs DSSP, maps 8-class → 3-class labels, and saves `dataset.csv`.
 
@@ -31,7 +31,7 @@ python validate_dataset.py --csv dataset.csv
 
 ---
 
-### Step 2 — Extract Embeddings (Person 2)
+### Step 2 — Extract Embeddings
 
 Loads `esm2_t30_150M_UR50D` (frozen), extracts layer-30 per-residue representations with shape `(L, 640)`, and caches one file per protein.
 
@@ -45,7 +45,7 @@ Existing valid embeddings are skipped automatically.
 
 ---
 
-### Step 3 — Train the MLP Classifier (Person 2)
+### Step 3 — Train the MLP Classifier
 
 ```bash
 python train_mlp.py \
@@ -70,7 +70,7 @@ Uses an 80/20 protein-level train/validation split (`random_state=42`).
 
 ---
 
-### Step 4 — 5-Fold Cross-Validation (Person 3)
+### Step 4 — 5-Fold Cross-Validation
 
 ```bash
 python evaluate_cv.py --csv dataset.csv --embedding-dir embeddings
